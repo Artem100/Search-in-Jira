@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3076a18-7ced-4711-8182-11c326262e60" name="Default" comment="First commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Search-in-Jira.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drivers/chromedriver" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" afterDir="false" />
+    <list default="true" id="e3076a18-7ced-4711-8182-11c326262e60" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,13 +18,18 @@
       <file leaf-file-name="SearchJira.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+            <state relative-caret-position="375">
+              <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Added_implicitlyWait.patch" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Added_implicitlyWait.patch">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
@@ -61,8 +55,8 @@
       <file leaf-file-name="DashboardPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+            <state relative-caret-position="270">
+              <caret line="18" column="81" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#158#159#0" expanded="true" />
@@ -265,6 +259,35 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="SearchJira.testValidJQL" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Search-in-Jira" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchJira" />
+      <option name="METHOD_NAME" value="testValidJQL" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -290,10 +313,12 @@
     <list>
       <item itemvalue="TestNG.SearchJira" />
       <item itemvalue="TestNG.SearchJira.Login" />
+      <item itemvalue="TestNG.SearchJira.testValidJQL" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.SearchJira" />
+        <item itemvalue="TestNG.SearchJira.testValidJQL" />
         <item itemvalue="TestNG.SearchJira.Login" />
       </list>
     </recent_temporary>
@@ -309,15 +334,24 @@
       <option name="presentableId" value="Default" />
       <updated>1532509541738</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactoring">
+      <created>1532516197776</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1532516197776</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added implicitlyWait">
+      <created>1532522069450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1532522069450</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchJira - 2018.07.25 at 12h 50m 28s.xml">
-      <configuration name="SearchJira" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchJira - 2018.07.25 at 12h 52m 59s.xml">
-      <configuration name="SearchJira" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SearchJira - 2018.07.25 at 12h 54m 03s.xml">
       <configuration name="SearchJira" configurationId="TestNG" />
     </history-entry>
@@ -342,6 +376,12 @@
     <history-entry file="SearchJira - 2018.07.25 at 13h 02m 30s.xml">
       <configuration name="SearchJira" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SearchJira_testValidJQL - 2018.07.25 at 15h 29m 10s.xml">
+      <configuration name="SearchJira.testValidJQL" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira - 2018.07.25 at 15h 33m 36s.xml">
+      <configuration name="SearchJira" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-2" width="1920" height="1082" extended-state="6" />
@@ -349,18 +389,18 @@
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3281893" />
+      <window_info anchor="bottom" id="Messages" weight="0.3281893" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31995884" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31995884" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24114583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24114583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
@@ -380,7 +420,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="Refactoring" />
+    <MESSAGE value="Added implicitlyWait" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added implicitlyWait" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -399,20 +441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#341#342#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -444,10 +472,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="81" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#158#159#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Added_implicitlyWait.patch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
+        <state relative-caret-position="375">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
