@@ -33,8 +33,6 @@ public class SearchJira {
 
     @Test
     public void testValidJQL(){
-        dashboardPage.issueButton();
-        dashboardPage.currentSearch();
     }
 
 

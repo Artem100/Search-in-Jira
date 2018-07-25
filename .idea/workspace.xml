@@ -18,18 +18,13 @@
       <file leaf-file-name="SearchJira.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+            <state relative-caret-position="420">
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Added_implicitlyWait.patch" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Added_implicitlyWait.patch">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="LoginPage.java" pinned="false" current-in-tab="false">
@@ -348,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532522069450</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added implicitlyWait repeat">
+      <created>1532522305203</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1532522305203</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -422,7 +424,8 @@
     <MESSAGE value="First commit" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Added implicitlyWait" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added implicitlyWait" />
+    <MESSAGE value="Added implicitlyWait repeat" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added implicitlyWait repeat" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -491,8 +494,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        <state relative-caret-position="420">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
