@@ -1,7 +1,9 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -33,13 +35,18 @@ public class SearchJira {
 
     @Test
     public void testValidJQL(){
+        dashboardPage.issueButton();
+        dashboardPage.searchOfIssues();
+        searchPage.advancedButton();
+        searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
+        searchPage.searchButton();
+        Assert.assertTrue(driver.findElement(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed());
     }
 
 
     @AfterTest
     public void closeDriver(){
-
+    driver.quit();
     }
-
-
+    
 }

@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
 
 public class SearchPage {
 
@@ -11,17 +11,19 @@ public class SearchPage {
     public SearchPage(WebDriver driver){ this.driver = driver; }
 
     public void advancedButton(){
-        driver.findElement(By.cssSelector("[class='switcher-item active ']")).click(); }
+        try {
+            driver.findElement(By.name("jql"));
+        }
+        catch (Exception e){
+            driver.findElement(By.cssSelector("[class='switcher-item active ']")).click();
+        }
+    }
 
-    public void advancedField(String request){ driver.findElement(By.id("advanced-search")).sendKeys(request); }
+    public void advancedField(String request){
+        driver.findElement(By.name("jql")).sendKeys(request);
+
+    }
 
     public void searchButton(){
-        driver.findElement(By.cssSelector("class='aui-item aui-button aui-button-subtle search-button'")).click(); }
-
-
-
-
-
-
-
+        driver.findElement(By.cssSelector("[class='aui-item aui-button aui-button-subtle search-button']")).click(); }
 }
