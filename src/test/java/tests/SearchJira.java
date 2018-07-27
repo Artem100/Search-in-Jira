@@ -48,5 +48,5 @@ public class SearchJira {
     public void closeDriver(){
     driver.quit();
     }
-    
+
 }
