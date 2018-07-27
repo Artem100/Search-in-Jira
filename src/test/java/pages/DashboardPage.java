@@ -19,6 +19,10 @@ public class DashboardPage {
         driver.findElement(By.id("jira.top.navigation.bar:issues_drop_current_lnk")).click();
     }
 
+    public void searchForIssues(){
+        driver.findElement(By.id("issues_new_search_link_lnk")).click();
+    }
+
 
 
 
