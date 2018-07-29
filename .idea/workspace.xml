@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bf4f1-c46c-4174-815c-b21210c5042c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -56,24 +58,10 @@
       <file leaf-file-name="SearchJira.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="90" column="77" lean-forward="true" selection-start-line="90" selection-start-column="77" selection-end-line="90" selection-end-column="77" />
+            <state relative-caret-position="176">
+              <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
               <folding>
-                <element signature="e#3801#3802#0" expanded="true" />
-                <element signature="e#3826#3827#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DashboardPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
+                <element signature="e#3780#3781#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,8 +70,8 @@
       <file leaf-file-name="SearchPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+            <state relative-caret-position="107">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -92,7 +80,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
               <folding>
                 <element signature="e#771#772#0" expanded="true" />
                 <element signature="e#854#855#0" expanded="true" />
@@ -123,8 +111,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java" />
         <option value="$PROJECT_DIR$/src/test/java/pages/SearchErrorPage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" />
       </list>
     </option>
   </component>
@@ -135,7 +125,23 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="SearchInJira" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="SearchInJira" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="821" />
@@ -146,50 +152,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
               <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-              <item name="drivers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -215,7 +185,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.SearchJira.test4InvalidJQL">
+  <component name="RunManager" selected="TestNG.SearchJira.test2SaveFilter">
     <configuration name="SearchJira.test2SaveFilter" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SearchInJira" />
       <extension name="coverage">
@@ -310,9 +280,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SearchJira.test2SaveFilter" />
         <item itemvalue="TestNG.SearchJira.test4InvalidJQL" />
         <item itemvalue="TestNG.SearchJira.testCheckingOfProjectFilter" />
-        <item itemvalue="TestNG.SearchJira.test2SaveFilter" />
       </list>
     </recent_temporary>
   </component>
@@ -345,54 +315,54 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 03h 23m 00s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 03h 26m 21s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 03h 29m 19s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 03h 32m 12s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 03h 34m 30s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 20h 06m 20s.xml">
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 37m 14s.xml">
       <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 20h 08m 24s.xml">
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 38m 39s.xml">
       <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 20h 21m 48s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 39m 20s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 20h 23m 49s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 40m 01s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.29 at 20h 24m 54s.xml">
-      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 40m 56s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 41m 48s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 42m 34s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 43m 18s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 44m 01s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 45m 03s.xml">
+      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32605305" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32988048" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4163569" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4149766" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.52886117" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25035766" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25418326" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -405,7 +375,6 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32605305" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -423,11 +392,49 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1350">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+          <folding>
+            <element signature="e#3780#3781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+          <folding>
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
           <folding>
-            <element signature="e#3801#3802#0" expanded="true" />
-            <element signature="e#3826#3827#0" expanded="true" />
+            <element signature="e#3780#3781#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -489,7 +496,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
           <folding>
             <element signature="e#771#772#0" expanded="true" />
             <element signature="e#854#855#0" expanded="true" />
@@ -497,20 +504,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchErrorPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchErrorPage.java" />
+    <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="317">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
           <folding>
             <element signature="e#488#489#0" expanded="true" />
             <element signature="e#567#568#0" expanded="true" />
@@ -520,18 +532,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+        <state relative-caret-position="107">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="90" column="77" lean-forward="true" selection-start-line="90" selection-start-column="77" selection-end-line="90" selection-end-column="77" />
+        <state relative-caret-position="176">
+          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
           <folding>
-            <element signature="e#3801#3802#0" expanded="true" />
-            <element signature="e#3826#3827#0" expanded="true" />
+            <element signature="e#3780#3781#0" expanded="true" />
           </folding>
         </state>
       </provider>

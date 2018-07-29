@@ -33,7 +33,7 @@ public class SearchPage {
     public void searchProjectButton(){
 
         try {
-            driver.findElement(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow"));
+            driver.findElement(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).isDisplayed();
         }
         catch (Exception e){
             driver.findElement(By.cssSelector("[class='switcher-item active ']")).click();

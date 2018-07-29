@@ -36,7 +36,7 @@ public class SearchJira {
         loginPage.submitButton();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 2)
     public void test1ValidJQL(){
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
@@ -46,7 +46,7 @@ public class SearchJira {
         Assert.assertTrue(driver.findElement(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed());
     }
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     public void test2SaveFilter(){
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
@@ -64,7 +64,6 @@ public class SearchJira {
         manageFiltersPages.buttonDelete();
         manageFiltersPages.buttonDeleteApprove();
         driver.findElement(By.linkText("1 testSaveFilter"));
-        Assert.assertFalse(driver.findElement(By.linkText("1 testSaveFilter")).isDisplayed());
     }
 
     @Test(priority = 3)
