@@ -18,7 +18,7 @@ public class SearchPage {
             driver.findElement(By.name("jql"));
         }
         catch (Exception e){
-            driver.findElement(By.cssSelector("[class='switcher-item active ']")).click();
+            driver.findElement(By.cssSelector("[class='switcher-item active ']")).click();//вот я думаю что надо просто пути передавать а кликать уже в тесте
         }
     }
 
@@ -61,5 +61,15 @@ public class SearchPage {
                         findFilters.click();
     }
 
+    public WebElement basicButton(){
+        return driver.findElement(By.linkText("Basic"));
+    }
 
+    public WebElement firstResultInFilterSearch(){
+        return driver.findElement(By.className("item-label"));
+    }
+
+    public WebElement checkboxInFirstResultInFilterSearch(){
+        return driver.findElement(By.xpath("//*[@id=\"11400-1\"]/label/*"));
+    }
 }
