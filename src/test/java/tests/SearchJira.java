@@ -23,7 +23,7 @@ public class SearchJira {
 
     @BeforeTest
     public void setup(){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
         dashboardPage = new DashboardPage(driver);
@@ -36,7 +36,7 @@ public class SearchJira {
         loginPage.submitButton();
     }
 
-    @Test(priority = 1)//раз мы используем тест нг то лучше так прописывать приоритеты тестам чтоб быть увереными в последовательном процессе их выполнения
+    @Test(priority = 1)
     public void test1ValidJQL(){
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
@@ -52,7 +52,7 @@ public class SearchJira {
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButton();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        driver.findElement(By.cssSelector("[title='QAAUTO-6']")).click();//это наверное надо убрать от сда в другое место
+        driver.findElement(By.cssSelector("[title='QAAUTO-6']")).click();
         searchPage.searchProjectButton();
         searchPage.saveAsButton();
         searchPage.enterFilterName("1 testSaveFilter");
@@ -62,27 +62,25 @@ public class SearchJira {
         Assert.assertTrue(driver.findElement(By.linkText("1 testSaveFilter")).isDisplayed());
         manageFiltersPages.buttonSettings();
         manageFiltersPages.buttonDelete();
-        manageFiltersPages.buttonDeleteApprove();//нет проверки на удаленый фильтр раз добавлено ещё одно условие проверки нужне второй асерт на удаление єлемента
+        manageFiltersPages.buttonDeleteApprove();
+        driver.findElement(By.linkText("1 testSaveFilter"));
+        Assert.assertFalse(driver.findElement(By.linkText("1 testSaveFilter")).isDisplayed());
     }
 
     @Test(priority = 3)
     public void testCheckingOfProjectFilter(){
         dashboardPage.issueButton();
-        try{
-            dashboardPage.currentSearch();
-            System.out.printf("Oh !!! Panic...");
-        }catch(Exception e){
-            dashboardPage.searchOfIssues();
-        }
-        searchPage.advancedButton();
+        dashboardPage.searchOfIssues();
+        searchPage.searchProjectButton();
         Assert.assertEquals(searchPage.basicButton().getText(), "Basic");
         searchPage.basicButton().click();
         searchPage.searchProjectButton();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
         searchPage.enterSearchProjectFindProjects("\n");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
-        Assert.assertNotNull(searchPage.checkboxInFirstResultInFilterSearch().getAttribute("checked"));
     }
+
+    
 
     @AfterTest
     public void closeDriver(){
