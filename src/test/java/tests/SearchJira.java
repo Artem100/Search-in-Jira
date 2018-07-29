@@ -80,7 +80,16 @@ public class SearchJira {
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
     }
 
-    
+    @Test(priority = 4)
+    public void test4InvalidJQL() {
+        dashboardPage.issueButton();
+        dashboardPage.searchOfIssues();
+        searchPage.advancedButton();
+        searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
+        searchPage.searchButton();
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@class = 'aui-message error']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("jqlerrormsg")).isDisplayed());
+    }
 
     @AfterTest
     public void closeDriver(){

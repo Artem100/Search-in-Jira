@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d55bf4f1-c46c-4174-815c-b21210c5042c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,8 +56,12 @@
       <file leaf-file-name="SearchJira.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+            <state relative-caret-position="504">
+              <caret line="90" column="77" lean-forward="true" selection-start-line="90" selection-start-column="77" selection-end-line="90" selection-end-column="77" />
+              <folding>
+                <element signature="e#3801#3802#0" expanded="true" />
+                <element signature="e#3826#3827#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -64,9 +69,10 @@
       <file leaf-file-name="DashboardPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="360">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
+                <element signature="e#488#489#0" expanded="true" />
                 <element signature="e#567#568#0" expanded="true" />
               </folding>
             </state>
@@ -76,8 +82,8 @@
       <file leaf-file-name="SearchPage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="915">
-              <caret line="75" selection-start-line="75" selection-end-line="75" />
+            <state relative-caret-position="542">
+              <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -85,8 +91,8 @@
       <file leaf-file-name="ManageFiltersPages.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state>
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
               <folding>
                 <element signature="e#771#772#0" expanded="true" />
                 <element signature="e#854#855#0" expanded="true" />
@@ -96,6 +102,13 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,8 +121,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/SearchErrorPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/tests/SearchJira.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" />
       </list>
     </option>
   </component>
@@ -120,11 +135,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="20" />
-    <option name="width" value="1346" />
-    <option name="height" value="688" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="821" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -132,14 +146,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
               <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Search-in-Jira" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SearchInJira" type="b2602c69:ProjectViewProjectNode" />
@@ -170,7 +189,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,7 +215,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.SearchJira.testCheckingOfProjectFilter">
+  <component name="RunManager" selected="TestNG.SearchJira.test4InvalidJQL">
     <configuration name="SearchJira.test2SaveFilter" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SearchInJira" />
       <extension name="coverage">
@@ -211,6 +230,35 @@
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.SearchJira" />
       <option name="METHOD_NAME" value="test2SaveFilter" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="SearchJira.test4InvalidJQL" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SearchInJira" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.SearchJira" />
+      <option name="METHOD_NAME" value="test4InvalidJQL" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" />
@@ -258,9 +306,11 @@
     <list>
       <item itemvalue="TestNG.SearchJira.testCheckingOfProjectFilter" />
       <item itemvalue="TestNG.SearchJira.test2SaveFilter" />
+      <item itemvalue="TestNG.SearchJira.test4InvalidJQL" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.SearchJira.test4InvalidJQL" />
         <item itemvalue="TestNG.SearchJira.testCheckingOfProjectFilter" />
         <item itemvalue="TestNG.SearchJira.test2SaveFilter" />
       </list>
@@ -327,23 +377,22 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="669" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="821" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32605305" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4163569" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4163569" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24701196" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25035766" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -356,6 +405,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32605305" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -371,6 +421,46 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+          <folding>
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3826#3827#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#567#568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding>
+            <element signature="e#771#772#0" expanded="true" />
+            <element signature="e#854#855#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -398,8 +488,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/ManageFiltersPages.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
           <folding>
             <element signature="e#771#772#0" expanded="true" />
             <element signature="e#854#855#0" expanded="true" />
@@ -407,27 +497,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchErrorPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="278">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pages/DashboardPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="360">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
+            <element signature="e#488#489#0" expanded="true" />
             <element signature="e#567#568#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pages/SearchPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="72" column="9" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+        <state relative-caret-position="504">
+          <caret line="90" column="77" lean-forward="true" selection-start-line="90" selection-start-column="77" selection-end-line="90" selection-end-column="77" />
+          <folding>
+            <element signature="e#3801#3802#0" expanded="true" />
+            <element signature="e#3826#3827#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
