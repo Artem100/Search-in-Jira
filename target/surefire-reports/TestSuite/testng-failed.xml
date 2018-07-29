@@ -7,7 +7,9 @@
         <methods>
           <include name="closeDriver"/>
           <include name="setup"/>
+          <include name="test2SaveFilter"/>
           <include name="test1ValidJQL"/>
+          <include name="test4InvalidJQL"/>
           <include name="testCheckingOfProjectFilter"/>
         </methods>
       </class> <!-- tests.SearchJira -->

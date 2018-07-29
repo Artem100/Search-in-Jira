@@ -71,9 +71,6 @@ public class SearchJira {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButton();
-        Assert.assertEquals(searchPage.basicButton().getText(), "Basic");
-        searchPage.basicButton().click();
-        searchPage.searchProjectButton();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
         searchPage.enterSearchProjectFindProjects("\n");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
