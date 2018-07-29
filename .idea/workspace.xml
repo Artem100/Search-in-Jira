@@ -8,15 +8,13 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite/Test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite/Test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite/Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite/Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestSuite/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite/testng-failed.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-tests.SearchJira.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-tests.SearchJira.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/TestSuite/methods-alphabetical.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/TestSuite/methods-alphabetical.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/TestSuite/methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/TestSuite/methods.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/TestSuite/toc.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/TestSuite/toc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,8 +67,8 @@
       <file leaf-file-name="SearchJira.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
+            <state relative-caret-position="184">
+              <caret line="58" column="34" lean-forward="true" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
               <folding>
                 <element signature="e#3817#3818#0" expanded="true" />
                 <element signature="e#3842#3843#0" expanded="true" />
@@ -340,9 +338,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SearchJira_test2SaveFilter - 2018.07.29 at 23h 45m 03s.xml">
-      <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SearchJira_test2SaveFilter - 2018.07.30 at 00h 10m 45s.xml">
       <configuration name="SearchJira.test2SaveFilter" configurationId="TestNG" />
     </history-entry>
@@ -368,6 +363,9 @@
       <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
     </history-entry>
     <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.30 at 00h 36m 23s.xml">
+      <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="SearchJira_testCheckingOfProjectFilter - 2018.07.30 at 00h 40m 58s.xml">
       <configuration name="SearchJira.testCheckingOfProjectFilter" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -575,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/tests/SearchJira.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="76" column="20" lean-forward="true" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="20" />
+        <state relative-caret-position="184">
+          <caret line="58" column="34" lean-forward="true" selection-start-line="58" selection-start-column="34" selection-end-line="58" selection-end-column="34" />
           <folding>
             <element signature="e#3817#3818#0" expanded="true" />
             <element signature="e#3842#3843#0" expanded="true" />

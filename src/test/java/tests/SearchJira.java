@@ -14,6 +14,8 @@ import pages.SearchPage;
 
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.Thread.sleep;
+
 public class SearchJira {
     public static WebDriver driver;
     public static LoginPage loginPage;
@@ -47,7 +49,7 @@ public class SearchJira {
     }
 
     @Test(priority = 1)
-    public void test2SaveFilter(){
+    public void test2SaveFilter() throws InterruptedException {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButton();
@@ -55,7 +57,9 @@ public class SearchJira {
         driver.findElement(By.cssSelector("[title='QAAUTO-6']")).click();
         searchPage.searchProjectButton();
         searchPage.saveAsButton();
+        sleep(10);
         searchPage.enterFilterName("1 testSaveFilter");
+        sleep(10);
         searchPage.submitFilterName();
         searchPage.findFiltersButton();
         manageFiltersPages.myButton();
