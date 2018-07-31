@@ -91,6 +91,26 @@ public class SearchJira {
         Assert.assertTrue(driver.findElement(By.id("jqlerrormsg")).isDisplayed());
     }
 
+    @Test (priority = 5)
+    public void UncheckTheBoxes() throws InterruptedException {
+        dashboardPage.issueButton();
+        dashboardPage.searchOfIssues();
+        searchPage.searchProjectButton();
+        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
+        searchPage.enterSearchProjectFindProjects("\n");
+        searchPage.fiterTypeIssue();
+        searchPage.selectEpicFilter();
+        sleep(10);
+        searchPage.clickSomePlace();
+        searchPage.fiterTypeIssue();
+        searchPage.selectEpicFilter();
+        searchPage.filledProject();
+        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
+        searchPage.enterSearchProjectFindProjects("\n");
+        searchPage.advancedButton();
+        searchPage.emptyJQL();
+    }
+
     @AfterTest
     public void closeDriver(){
     driver.quit();

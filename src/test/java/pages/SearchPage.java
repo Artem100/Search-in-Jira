@@ -61,6 +61,45 @@ public class SearchPage {
                         findFilters.click();
     }
 
+    public void fiterProject(){
+        driver.findElement(By.cssSelector("button[data-id='project']")).click();
+    }
+
+    public void fiterTypeIssue(){
+        driver.findElement(By.cssSelector("button[data-id='issuetype']")).click();
+    }
+
+    public void selectQAAUTO6Profect(){
+        driver.findElement(By.cssSelector("input[value='11400']")).click();
+    }
+
+    public void selectEpicFilter(){
+        driver.findElement(By.cssSelector("input[value='10000']")).click();
+    }
+
+    public void enterSearchTypeissue(String type){
+        driver.findElement(By.cssSelector("button[data-id='issuetype']")).sendKeys(type); }
+
+    public void clickSomePlace(){
+        driver.findElement(By.cssSelector("div.header-section-primary")).click();
+    }
+
+    public void filledProject(){
+        driver.findElement(By.cssSelector("button[data-id='project']")).click();
+    }
+
+    public boolean emptyJQL(){
+        try {
+            driver.findElement(By.id("jqlerrormsg")).isDisplayed();
+            return false;
+        }
+        catch (Exception e){
+            return true;
+        }
+    }
+
+
+
     public WebElement basicButton(){
         return driver.findElement(By.linkText("Basic"));
     }
@@ -72,4 +111,6 @@ public class SearchPage {
     public WebElement checkboxInFirstResultInFilterSearch(){
         return driver.findElement(By.xpath("//*[@id=\"11400-1\"]/label/*"));
     }
+
+
 }
