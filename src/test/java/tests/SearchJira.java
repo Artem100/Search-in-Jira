@@ -111,9 +111,20 @@ public class SearchJira {
         searchPage.emptyJQL();
     }
 
+    @Test(priority = 9)
+    public void EpmtyResultsIssue() {
+        dashboardPage.issueButton();
+        dashboardPage.searchOfIssues();
+        searchPage.advancedButton();
+        searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
+        searchPage.searchButton();
+        Assert.assertTrue(driver.findElement(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed());
+
+    }
+
     @AfterTest
     public void closeDriver(){
-    driver.quit();
+    //driver.quit();
     }
 
 }
