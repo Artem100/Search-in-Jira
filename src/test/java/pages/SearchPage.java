@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,15 +30,12 @@ public class SearchPage {
         $(By.cssSelector("[class='aui-item aui-button aui-button-subtle search-button']")).click(); }
 
     public void searchProjectButton(){
-
         try {
-            $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).isDisplayed();
+            $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).shouldBe(Condition.visible);
+            $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         }
         catch (Exception e){
-            $(By.cssSelector("[class='switcher-item active ']")).click();
-        }
-
-        $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click(); }
+            $(By.cssSelector("[class='switcher-item active ']")).click(); }}
 
      public void enterSearchProjectFindProjects(String request){
         $(By.id("searcher-pid-input")).setValue(request); }
