@@ -49,6 +49,14 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>selenide</artifactId>
+            <version>4.12.3</version>
+            <scope>test</scope>
+        </dependency>
+
+
 
     </dependencies>
 
