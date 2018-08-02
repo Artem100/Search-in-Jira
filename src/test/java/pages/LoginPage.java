@@ -3,22 +3,19 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
-    private WebDriver driver;
+import static com.codeborne.selenide.Selenide.$;
 
-    public LoginPage(WebDriver driver){
-        this.driver = driver;
-    }
+public class LoginPage {
 
     public void enterLogin(String login){
-        driver.findElement(By.id("login-form-username")).sendKeys(login);
+        $(By.id("login-form-username")).sendKeys(login);
     }
 
     public void enterPassword(String password){
-        driver.findElement(By.id("login-form-password")).sendKeys(password);
+        $(By.id("login-form-password")).setValue(password);
     }
 
     public void submitButton(){
-        driver.findElement(By.id("login-form-submit")).click();
+        $(By.id("login-form-submit")).click();
     }
 }

@@ -2,7 +2,6 @@ package tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,8 +11,9 @@ import pages.LoginPage;
 import pages.ManageFiltersPages;
 import pages.SearchPage;
 
-import java.util.concurrent.TimeUnit;
-
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.assertNoJavascriptErrors;
+import static com.codeborne.selenide.Selenide.open;
 import static java.lang.Thread.sleep;
 
 public class SearchJira {
@@ -25,14 +25,11 @@ public class SearchJira {
 
     @BeforeTest
     public void setup(){
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
-        driver = new ChromeDriver();
-        loginPage = new LoginPage(driver);
-        dashboardPage = new DashboardPage(driver);
-        searchPage = new SearchPage(driver);
-        manageFiltersPages = new ManageFiltersPages(driver);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("http://jira.hillel.it:8080/login.jsp");
+        loginPage = new LoginPage();
+        dashboardPage = new DashboardPage();
+        searchPage = new SearchPage();
+        manageFiltersPages = new ManageFiltersPages();
+        open("http://jira.hillel.it:8080/login.jsp");
         loginPage.enterLogin("webinar5");
         loginPage.enterPassword("webinar5");
         loginPage.submitButton();
@@ -61,7 +58,7 @@ public class SearchJira {
         searchPage.enterFilterName("1 testSaveFilter");
         sleep(10);
         searchPage.submitFilterName();
-        searchPage.findFiltersButton();
+//        searchPage.findFiltersButton().click();
         manageFiltersPages.myButton();
         Assert.assertTrue(driver.findElement(By.linkText("1 testSaveFilter")).isDisplayed());
         manageFiltersPages.buttonSettings();
@@ -111,6 +108,20 @@ public class SearchJira {
         searchPage.emptyJQL();
     }
 
+    @Test(priority = 6)
+    public void checkingOfNewFilterButton()
+    {
+        dashboardPage.issueButton();
+        dashboardPage.searchOfIssues();
+        searchPage.advancedButton();
+        searchPage.basicButton();
+        searchPage.filledProject();
+        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
+        searchPage.enterSearchProjectFindProjects("\n");
+        searchPage.enterSearchTypeFindProjectsCheckEpikLink().click();
+        Assert.assertTrue($(By.xpath("/html/body/div[1]/section/div[1]/div[3]/div/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol/li/a/span[2]")).isDisplayed());
+    }
+
     @Test(priority = 9)
     public void EpmtyResultsIssue() {
         dashboardPage.issueButton();
@@ -118,13 +129,13 @@ public class SearchJira {
         searchPage.advancedButton();
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.searchButton();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed());
+        Assert.assertTrue($(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed());
 
     }
 
     @AfterTest
     public void closeDriver(){
-    //driver.quit();
+//    driver.quit();
     }
 
 }
