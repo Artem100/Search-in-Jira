@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -29,6 +30,7 @@ public class SearchJira {
         dashboardPage = new DashboardPage();
         searchPage = new SearchPage();
         manageFiltersPages = new ManageFiltersPages();
+        Configuration.browser = "chrome";
         open("http://jira.hillel.it:8080/login.jsp");
         loginPage.enterLogin("webinar5");
         loginPage.enterPassword("webinar5");
@@ -42,7 +44,7 @@ public class SearchJira {
         searchPage.advancedButton();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.searchButton();
-        Assert.assertTrue(driver.findElement(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed());
+        ($(By.cssSelector("[title='[Test Automation] Test New Issue']"))).isDisplayed();
     }
 
     @Test(priority = 1)
@@ -132,10 +134,4 @@ public class SearchJira {
         Assert.assertTrue($(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed());
 
     }
-
-    @AfterTest
-    public void closeDriver(){
-//    driver.quit();
-    }
-
 }
