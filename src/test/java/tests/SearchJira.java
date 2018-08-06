@@ -44,7 +44,8 @@ public class SearchJira {
         searchPage.advancedButton();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.searchButton();
-        ($(By.cssSelector("[title='[Test Automation] Test New Issue']"))).isDisplayed();
+        $(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed();
+
     }
 
     @Test(priority = 1)
