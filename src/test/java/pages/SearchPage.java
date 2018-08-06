@@ -21,9 +21,18 @@ public class SearchPage {
         }
     }
 
+    public void advancedButtonSelenide(){
+        if($(By.name("jql")).isDisplayed()){
+            //$(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
+        }
+        else {
+            $(By.cssSelector("[class='switcher-item active ']")).click();
+        }
+    }
+
+
     public void advancedField(String request){
         $(By.name("jql")).setValue(request);
-
     }
 
     public void searchButton(){
@@ -49,7 +58,7 @@ public class SearchPage {
 
 
      public void enterSearchProjectFindProjects(String request){
-        $(By.id("searcher-pid-input")).click();
+        //$(By.id("searcher-pid-input")).click();
         $(By.id("searcher-pid-input")).setValue(request); }
 
     public void saveAsButton(){
@@ -109,15 +118,19 @@ public class SearchPage {
     }
 
     public WebElement firstResultInFilterSearch(){
-        return $(By.className("item-label"));
+        return $(By.cssSelector(".item-label"));
+    }
+
+    public WebElement fiterTypeIssueResult(){
+        return $(By.cssSelector(".fieldLabel"));
     }
 
     public WebElement checkboxInFirstResultInFilterSearch(){
         return $(By.xpath("//*[@id=\"11400-1\"]/label/*"));
     }
 
-    public WebElement enterSearchTypeFindProjectsCheckEpikLink() {
-        $(By.xpath("/html/body/div[1]/section/div[1]/div[3]/div/form/div[1]/div[1]/div[1]/div[1]/div/div[1]/ul/li[2]/button")).click();
-        return $(By.xpath("/html/body/div[6]/div/form/div/div/div/div[2]/div/ul[2]/li[2]/label/input"));
+    public void enterSearchTypeFindProjectsCheckEpikLink() {
+        $(By.cssSelector("a.new-search.aui-button.aui-button-light")).click();
+        //return $(By.xpath("/html/body/div[6]/div/form/div/div/div/div[2]/div/ul[2]/li[2]/label/input"));
     }
 }

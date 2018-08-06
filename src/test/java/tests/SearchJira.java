@@ -42,7 +42,7 @@ public class SearchJira {
     public void test1ValidJQL(){
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.advancedButton();
+        searchPage.advancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.searchButton();
         $(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed();
@@ -72,7 +72,7 @@ public class SearchJira {
     public void testCheckingOfProjectFilter(){
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.searchProjectButton();
+        searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
         searchPage.enterSearchProjectFindProjects("\n");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
@@ -82,18 +82,18 @@ public class SearchJira {
     public void test4InvalidJQL() {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.advancedButton();
+        searchPage.advancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
         searchPage.searchButton();
-        Assert.assertTrue(driver.findElement(By.xpath("//div[@class = 'aui-message error']")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.id("jqlerrormsg")).isDisplayed());
+        $(By.xpath("//div[@class = 'aui-message error']")).isDisplayed();
+        $(By.id("jqlerrormsg")).isDisplayed();
     }
 
     @Test (priority = 5)
     public void UncheckTheBoxes() throws InterruptedException {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.searchProjectButton();
+        searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
         searchPage.enterSearchProjectFindProjects("\n");
         searchPage.fiterTypeIssue();
@@ -110,8 +110,7 @@ public class SearchJira {
     }
 
     @Test(priority = 6)
-    public void checkingOfNewFilterButton()
-    {
+    public void checkingOfNewFilterButton()  throws InterruptedException {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
         searchPage.advancedButton();
@@ -119,18 +118,23 @@ public class SearchJira {
         searchPage.filledProject();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
         searchPage.enterSearchProjectFindProjects("\n");
-        searchPage.enterSearchTypeFindProjectsCheckEpikLink().click();
-        Assert.assertTrue($(By.xpath("/html/body/div[1]/section/div[1]/div[3]/div/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol/li/a/span[2]")).isDisplayed());
+        searchPage.fiterTypeIssue();
+        searchPage.selectEpicFilter();
+        searchPage.enterSearchTypeFindProjectsCheckEpikLink();
+        //sleep(10);
+        Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), " All");
+        Assert.assertEquals(searchPage.fiterTypeIssueResult().getAttribute("title"), "All");
+
+        //Assert.assertTrue($(By.xpath("/html/body/div[1]/section/div[1]/div[3]/div/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol/li/a/span[2]")).isDisplayed());
     }
 
     @Test(priority = 9)
     public void EpmtyResultsIssue() {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.advancedButton();
+        searchPage.advancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.searchButton();
-        Assert.assertTrue($(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed());
-
+        $(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();
     }
 }
