@@ -35,9 +35,21 @@ public class SearchPage {
             $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         }
         catch (Exception e){
-            $(By.cssSelector("[class='switcher-item active ']")).click(); }}
+            $(By.cssSelector("[class='switcher-item active ']")).click(); }
+    }
+
+    public void searchProjectButtonSelenide(){
+        if($(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).isDisplayed()){
+            $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
+        }
+        else {
+            $(By.cssSelector("[class='switcher-item active ']")).click();
+        }
+    }
+
 
      public void enterSearchProjectFindProjects(String request){
+        $(By.id("searcher-pid-input")).click();
         $(By.id("searcher-pid-input")).setValue(request); }
 
     public void saveAsButton(){
@@ -50,9 +62,9 @@ public class SearchPage {
         $(By.cssSelector(".aui-button.submit")).click();
     }
 
-    public WebElement findFiltersButton(){
-        $(By.className("aui-blanket")).isDisplayed();
-        return $(By.cssSelector(".find-filters"));
+    public void findFiltersButton(){
+        //$(By.className("aui-blanket")).isDisplayed();
+        $(By.cssSelector(".find-filters")).click();
     }
 
     public void fiterProject(){

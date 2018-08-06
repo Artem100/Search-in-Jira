@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -52,22 +53,19 @@ public class SearchJira {
     public void test2SaveFilter() throws InterruptedException {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.searchProjectButton();
+        searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        driver.findElement(By.cssSelector("[title='QAAUTO-6']")).click();
         searchPage.searchProjectButton();
         searchPage.saveAsButton();
-        sleep(10);
         searchPage.enterFilterName("1 testSaveFilter");
-        sleep(10);
         searchPage.submitFilterName();
-//        searchPage.findFiltersButton().click();
+        searchPage.findFiltersButton();
         manageFiltersPages.myButton();
-        Assert.assertTrue(driver.findElement(By.linkText("1 testSaveFilter")).isDisplayed());
+        $(By.linkText("1 testSaveFilter")).shouldBe(Condition.visible);
         manageFiltersPages.buttonSettings();
         manageFiltersPages.buttonDelete();
         manageFiltersPages.buttonDeleteApprove();
-        driver.findElement(By.linkText("1 testSaveFilter"));
+        $(By.linkText("1 testSaveFilter")).shouldNotBe(Condition.visible);
     }
 
     @Test(priority = 3)

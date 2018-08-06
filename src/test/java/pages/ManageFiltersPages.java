@@ -11,7 +11,7 @@ public class ManageFiltersPages {
         $(By.id("search-filters-tab")).click();
     }
     public void myButton() {
-        $(By.id("search-filters-tab")).isDisplayed();
+        //$(By.id("search-filters-tab")).isDisplayed();
         $(By.id("my-filters-tab")).click();
     }
 
@@ -20,7 +20,7 @@ public class ManageFiltersPages {
     }
 
     public void buttonDelete(){
-        $(By.cssSelector("a.delete-filter")).click();
+        $(By.cssSelector("a.delete-filter[tabindex='-1']")).click();
     }
 
     public void buttonDeleteApprove(){
