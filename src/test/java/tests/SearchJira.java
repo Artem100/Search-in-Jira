@@ -2,8 +2,10 @@ package tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,6 +14,8 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import pages.ManageFiltersPages;
 import pages.SearchPage;
+
+import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.assertNoJavascriptErrors;
@@ -136,5 +140,20 @@ public class SearchJira {
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.searchButton();
         $(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();
+    }
+
+    @Test (priority = 19)
+    public void CheckingProjectFilterEpicType() {
+        dashboardPage.issueButton();
+        dashboardPage.searchOfIssues();
+        searchPage.filledProject();
+        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
+        searchPage.enterSearchProjectFindProjects("\n");
+        searchPage.fiterTypeIssue();
+        searchPage.selectEpicFilter();
+        searchPage.fiterTypeIssue();
+        List<SelenideElement> listImg= $(".list-content").$$("img");
+        for (WebElement element: listImg) {
+            Assert.assertEquals(element.getAttribute("alt"), "Epic");}
     }
 }
