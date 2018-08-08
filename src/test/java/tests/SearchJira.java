@@ -143,7 +143,7 @@ public class SearchJira {
     }
 
     @Test (priority = 19)
-    public void CheckingProjectFilteEpicType() throws InterruptedException {
+    public void CheckingProjectFilteEpicType(){
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButtonSelenide();
