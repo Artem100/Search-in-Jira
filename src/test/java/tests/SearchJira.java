@@ -17,9 +17,7 @@ import pages.SearchPage;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.assertNoJavascriptErrors;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static java.lang.Thread.sleep;
 
 public class SearchJira {
@@ -78,7 +76,6 @@ public class SearchJira {
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.enterSearchProjectFindProjects("\n");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
     }
 
@@ -99,38 +96,28 @@ public class SearchJira {
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.enterSearchProjectFindProjects("\n");
         searchPage.fiterTypeIssue();
         searchPage.selectEpicFilter();
         sleep(10);
         searchPage.clickSomePlace();
         searchPage.fiterTypeIssue();
         searchPage.selectEpicFilter();
-        searchPage.filledProject();
-        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.enterSearchProjectFindProjects("\n");
-        searchPage.advancedButton();
-        searchPage.emptyJQL();
-    }
+        //searchPage.filledProject();
+        //searchPage.enterSearchProjectFindProjects("QAAUTO-6");
+        searchPage.uncheckSearchProjectFindProjects();
+        $(By.cssSelector("span.fieldLabel")).isDisplayed(); }
 
     @Test(priority = 6)
     public void checkingOfNewFilterButton()  throws InterruptedException {
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
-        searchPage.advancedButton();
-        searchPage.basicButton();
-        searchPage.filledProject();
+        searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.enterSearchProjectFindProjects("\n");
         searchPage.fiterTypeIssue();
         searchPage.selectEpicFilter();
         searchPage.enterSearchTypeFindProjectsCheckEpikLink();
-        //sleep(10);
-        Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), " All");
-        Assert.assertEquals(searchPage.fiterTypeIssueResult().getAttribute("title"), "All");
-
-        //Assert.assertTrue($(By.xpath("/html/body/div[1]/section/div[1]/div[3]/div/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/div[2]/div/ol/li/a/span[2]")).isDisplayed());
-    }
+        $$(By.cssSelector("span.fieldLabel")).shouldHaveSize(4);
+        }
 
     @Test(priority = 9)
     public void EpmtyResultsIssue() {
@@ -143,15 +130,14 @@ public class SearchJira {
     }
 
     @Test (priority = 19)
-    public void CheckingProjectFilteEpicType(){
+    public void CheckingProjectFilteEpicType() throws InterruptedException{
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButtonSelenide();
         searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.enterSearchProjectFindProjects("\n");
         searchPage.fiterTypeIssue();
         searchPage.selectEpicFilter();
-        searchPage.fiterTypeIssue();
+        sleep(1000);
         List<SelenideElement> listImg= $(".list-content").$$("img");
         for (WebElement element: listImg) {
             Assert.assertEquals(element.getAttribute("alt"), "Epic");}

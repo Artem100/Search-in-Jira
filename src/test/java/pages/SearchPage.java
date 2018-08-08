@@ -49,7 +49,7 @@ public class SearchPage {
 
     public void searchProjectButtonSelenide(){
         if($(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).isDisplayed()){
-            $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
+            //$(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         }
         else {
             $(By.cssSelector("[class='switcher-item active ']")).click();
@@ -58,8 +58,18 @@ public class SearchPage {
 
 
      public void enterSearchProjectFindProjects(String request){
-        //$(By.id("searcher-pid-input")).click();
-        $(By.id("searcher-pid-input")).setValue(request); }
+        $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
+        //$(By.cssSelector("input#searcher-pid-input.aui-field.check-list-field")).click();
+        $(By.id("searcher-pid-input")).setValue(request);
+        $(By.cssSelector("label[title='QAAUTO-6']")).click();
+        }
+
+    public void uncheckSearchProjectFindProjects(){
+        $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
+        //$(By.cssSelector("input#searcher-pid-input.aui-field.check-list-field")).click();
+        //$(By.id("searcher-pid-input")).setValue(request);
+        $(By.cssSelector("label[title='QAAUTO-6']")).click();
+    }
 
     public void saveAsButton(){
         $(By.cssSelector(".aui-button.aui-button-light.save-as-new-filter")).click(); }
@@ -121,9 +131,9 @@ public class SearchPage {
         return $(By.cssSelector(".item-label"));
     }
 
-    public WebElement fiterTypeIssueResult(){
+    /*public WebElement fiterTypeIssueResult(){
         return $(By.cssSelector(".fieldLabel"));
-    }
+    }*/
 
     public WebElement checkboxInFirstResultInFilterSearch(){
         return $(By.xpath("//*[@id=\"11400-1\"]/label/*"));
