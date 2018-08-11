@@ -1,22 +1,15 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.DashboardPage;
 import pages.LoginPage;
 import pages.ManageFiltersPages;
 import pages.SearchPage;
 
-import java.util.List;
 import utils.ConfigProperties;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -29,7 +22,7 @@ public class SearchJira {
     public static DashboardPage dashboardPage;
     public static ManageFiltersPages manageFiltersPages;
 
-    @BeforeTest
+    @BeforeMethod
     public void setup(){
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
@@ -40,6 +33,7 @@ public class SearchJira {
         loginPage.enterLogin(ConfigProperties.getTestProperty("LoginWebinar5"));
         loginPage.enterPassword(ConfigProperties.getTestProperty("PasswordWebinar5"));
         loginPage.submitButton();
+
     }
 
     @Test
@@ -130,7 +124,7 @@ public class SearchJira {
     }
 
     @Test
-    public void CheckingProjectFilteEpicType() throws InterruptedException{
+    public void ZCheckingProjectFilteEpicType() throws InterruptedException{
         dashboardPage.issueButton();
         dashboardPage.searchOfIssues();
         searchPage.searchProjectButtonSelenide();
@@ -138,9 +132,11 @@ public class SearchJira {
         searchPage.fiterTypeIssue();
         searchPage.selectEpicFilter();
         sleep(1000);
-        List<SelenideElement> listImg= $(".list-content").$$("img");
-        for (WebElement element: listImg) {
-            Assert.assertEquals(element.getAttribute("alt"), "Epic");}
+        $$(By.xpath(".//a[@data-issue-key='QAAUT6-5']/img[@alt='Epic']")).filter(Condition.visible);}
+
+    @AfterMethod
+    public void close1(){
+        WebDriverRunner.getWebDriver().quit();
     }
 
     @AfterSuite
