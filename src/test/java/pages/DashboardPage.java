@@ -15,9 +15,7 @@ public class DashboardPage {
         try{
             $(By.id("jira.top.navigation.bar:issues_drop_current_lnk")).click();
         }catch (Exception e){
-            searchOfIssues();
-        }
-    }
+            searchOfIssues(); } }
 
     public void searchOfIssues(){
         $("#issues_new_search_link_lnk").click();

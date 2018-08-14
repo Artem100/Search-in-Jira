@@ -98,10 +98,6 @@ public class SearchPage {
         return $(By.cssSelector(".item-label"));
     }
 
-    public WebElement checkboxInFirstResultInFilterSearch(){
-        return $(By.xpath("//*[@id=\"11400-1\"]/label/*"));
-    }
-
     public void enterSearchTypeFindProjectsCheckEpikLink() {
         $(By.cssSelector("a.new-search.aui-button.aui-button-light")).click(); }
 }
