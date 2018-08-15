@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.DashboardPage;
@@ -11,6 +12,8 @@ import pages.ManageFiltersPages;
 import pages.SearchPage;
 
 import utils.ConfigProperties;
+
+import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.Thread.sleep;
@@ -132,16 +135,20 @@ public class SearchJira {
     }
 
     @Test
-    public void ZCheckingProjectFilteEpicType() throws InterruptedException{
+    public void CheckingProjectFilterEpicType()  {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
-        searchPage.clickSearchProjectButton();
-        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.selectProject("QAAUTO-6");
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
-        sleep(1000);
-        $$(By.xpath(".//a[@data-issue-key='QAAUT6-5']/img[@alt='Epic']")).filter(Condition.visible);}
+        searchPage.clickFiterTypeIssue();
+        searchPage.clickButtonChangeViews();
+        searchPage.clickDetailView();
+
+        List<SelenideElement> listImg= $(".list-content").$$("img");
+        for (WebElement element: listImg) {
+            Assert.assertEquals(element.getAttribute("alt"), "Epic");}
+    }
 
     @AfterMethod
     public void close1(){
