@@ -32,7 +32,7 @@ public class SearchJira {
         open(ConfigProperties.getTestProperty("jiraURL"));
         loginPage.enterLogin(ConfigProperties.getTestProperty("LoginWebinar5"));
         loginPage.enterPassword(ConfigProperties.getTestProperty("PasswordWebinar5"));
-        loginPage.submitButton();
+        loginPage.clickSubmitButton();
         dashboardPage.atRequiredPage();
     }
 
@@ -58,11 +58,11 @@ public class SearchJira {
         searchPage.enterFilterName("1 testSaveFilter");
         searchPage.submitFilterName();
         searchPage.findFiltersButton();
-        manageFiltersPages.myButton();
+        manageFiltersPages.clickMyButton();
         $(By.linkText("1 testSaveFilter")).shouldBe(Condition.visible);
-        manageFiltersPages.buttonSettings();
-        manageFiltersPages.buttonDelete();
-        manageFiltersPages.buttonDeleteApprove();
+        manageFiltersPages.clickbuttonSettings();
+        manageFiltersPages.clickbuttonDelete();
+        manageFiltersPages.clickbuttonDeleteApprove();
         $(By.linkText("1 testSaveFilter")).shouldNotBe(Condition.visible);
     }
 

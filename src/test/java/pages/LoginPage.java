@@ -15,7 +15,7 @@ public class LoginPage {
         $(By.id("login-form-password")).setValue(password);
     }
 
-    public void submitButton(){
+    public void clickSubmitButton(){
         $(By.id("login-form-submit")).click();
     }
 }
