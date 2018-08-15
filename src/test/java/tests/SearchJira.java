@@ -33,16 +33,17 @@ public class SearchJira {
         loginPage.enterLogin(ConfigProperties.getTestProperty("LoginWebinar5"));
         loginPage.enterPassword(ConfigProperties.getTestProperty("PasswordWebinar5"));
         loginPage.clickSubmitButton();
-        dashboardPage.atRequiredPage();
+        loginPage.atRequiredPage();
     }
 
     @Test
     public void test1ValidJQL(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.advancedButtonSelenide();
+        searchPage.atRequiredPage();
+        searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
-        searchPage.searchButton();
+        searchPage.clickSearchButton();
         $(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed();
 
     }
@@ -51,18 +52,18 @@ public class SearchJira {
     public void test2SaveFilter() throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.searchProjectButtonSelenide();
-        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.searchProjectButton();
-        searchPage.saveAsButton();
+        searchPage.atRequiredPage();
+        searchPage.clickSearchProjectButton();
+        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.clickSaveAsButton();
         searchPage.enterFilterName("1 testSaveFilter");
-        searchPage.submitFilterName();
-        searchPage.findFiltersButton();
+        searchPage.clickSubmitFilterName();
+        searchPage.clickFindFiltersButton();
         manageFiltersPages.clickMyButton();
         $(By.linkText("1 testSaveFilter")).shouldBe(Condition.visible);
-        manageFiltersPages.clickbuttonSettings();
-        manageFiltersPages.clickbuttonDelete();
-        manageFiltersPages.clickbuttonDeleteApprove();
+        manageFiltersPages.clickButtonSettings();
+        manageFiltersPages.clickButtonDelete();
+        manageFiltersPages.clickButtonDeleteApprove();
         $(By.linkText("1 testSaveFilter")).shouldNotBe(Condition.visible);
     }
 
@@ -70,8 +71,9 @@ public class SearchJira {
     public void testCheckingOfProjectFilter(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.searchProjectButtonSelenide();
-        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
+        searchPage.atRequiredPage();
+        searchPage.clickSearchProjectButton();
+        searchPage.selectProjectQAAUTO6("QAAUTO-6");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
     }
 
@@ -79,9 +81,10 @@ public class SearchJira {
     public void test4InvalidJQL() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.advancedButtonSelenide();
+        searchPage.atRequiredPage();
+        searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
-        searchPage.searchButton();
+        searchPage.clickSearchButton();
         $(By.xpath("//div[@class = 'aui-message error']")).isDisplayed();
         $(By.id("jqlerrormsg")).isDisplayed();
     }
@@ -90,14 +93,16 @@ public class SearchJira {
     public void UncheckTheBoxes() throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.searchProjectButtonSelenide();
-        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.fiterTypeIssue();
+        searchPage.atRequiredPage();
+        searchPage.clickSearchProjectButton();
+        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         sleep(10);
         searchPage.clickSomePlace();
-        searchPage.fiterTypeIssue();
+        searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
+        sleep(10);
         searchPage.uncheckSearchProjectFindProjects();
         $(By.cssSelector("span.fieldLabel")).isDisplayed(); }
 
@@ -105,11 +110,13 @@ public class SearchJira {
     public void checkingOfNewFilterButton()  throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.searchProjectButtonSelenide();
-        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.fiterTypeIssue();
+        searchPage.atRequiredPage();
+        searchPage.clickSearchProjectButton();
+        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        sleep(10);
+        searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
-        searchPage.enterSearchTypeFindProjectsCheckEpikLink();
+        searchPage.clickNewFilterButton();
         $$(By.cssSelector("span.fieldLabel")).shouldHaveSize(4);
         }
 
@@ -117,9 +124,10 @@ public class SearchJira {
     public void EpmtyResultsIssue() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.advancedButtonSelenide();
+        searchPage.atRequiredPage();
+        searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
-        searchPage.searchButton();
+        searchPage.clickSearchButton();
         $(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();
     }
 
@@ -127,9 +135,10 @@ public class SearchJira {
     public void ZCheckingProjectFilteEpicType() throws InterruptedException{
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.searchProjectButtonSelenide();
-        searchPage.enterSearchProjectFindProjects("QAAUTO-6");
-        searchPage.fiterTypeIssue();
+        searchPage.atRequiredPage();
+        searchPage.clickSearchProjectButton();
+        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         sleep(1000);
         $$(By.xpath(".//a[@data-issue-key='QAAUT6-5']/img[@alt='Epic']")).filter(Condition.visible);}
