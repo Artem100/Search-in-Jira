@@ -36,6 +36,11 @@ public class SearchPage {
         $(By.id("searcher-pid-input")).setValue(request);
         $(By.cssSelector("label[title='QAAUTO-6']")).click(); }
 
+    public void selectProject(String request){
+        $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
+        $(By.id("searcher-pid-input")).setValue(request);
+        $(By.cssSelector("label[title='" +request+"']")).click(); }
+
     public void uncheckSearchProjectFindProjects()  throws InterruptedException{
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         sleep(10);
@@ -67,6 +72,15 @@ public class SearchPage {
 
     public boolean atRequiredPage()
     { Assert.assertEquals(title(), "Issue Navigator - Hillel IT School JIRA");
-        return true;
-    }
+        return true; }
+
+    public void clickButtonChangeViews(){
+        $(".aui-buttons").click();}
+
+    public void clickDetailView(){
+        $("a.aui-list-item-link[data-layout-key='split-view'").click(); }
+
+    public void clickListView(){
+        $("a.aui-list-item-link[data-layout-key='list-view']").click(); }
+
 }

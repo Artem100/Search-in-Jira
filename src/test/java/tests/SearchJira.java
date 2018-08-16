@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.DashboardPage;
@@ -11,6 +12,8 @@ import pages.ManageFiltersPages;
 import pages.SearchPage;
 
 import utils.ConfigProperties;
+
+import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 import static java.lang.Thread.sleep;
@@ -40,7 +43,6 @@ public class SearchJira {
     public void test1ValidJQL(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.clickSearchButton();
@@ -52,7 +54,6 @@ public class SearchJira {
     public void test2SaveFilter() throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         searchPage.clickSaveAsButton();
@@ -71,7 +72,6 @@ public class SearchJira {
     public void testCheckingOfProjectFilter(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
@@ -81,7 +81,6 @@ public class SearchJira {
     public void test4InvalidJQL() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
         searchPage.clickSearchButton();
@@ -93,7 +92,6 @@ public class SearchJira {
     public void UncheckTheBoxes() throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         searchPage.clickFiterTypeIssue();
@@ -110,7 +108,6 @@ public class SearchJira {
     public void checkingOfNewFilterButton()  throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         sleep(10);
@@ -124,7 +121,6 @@ public class SearchJira {
     public void EpmtyResultsIssue() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.clickSearchButton();
@@ -132,16 +128,19 @@ public class SearchJira {
     }
 
     @Test
-    public void ZCheckingProjectFilteEpicType() throws InterruptedException{
+    public void CheckingProjectFilterEpicType()  {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
-        searchPage.clickSearchProjectButton();
-        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.selectProject("QAAUTO-6");
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
-        sleep(1000);
-        $$(By.xpath(".//a[@data-issue-key='QAAUT6-5']/img[@alt='Epic']")).filter(Condition.visible);}
+        searchPage.clickFiterTypeIssue();
+        searchPage.clickButtonChangeViews();
+        searchPage.clickDetailView();
+        List<SelenideElement> listImg= $(".list-content").$$("img");
+        for (WebElement element: listImg) {
+            Assert.assertEquals(element.getAttribute("alt"), "Epic");}
+    }
 
     @AfterMethod
     public void close1(){
