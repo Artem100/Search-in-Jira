@@ -43,7 +43,6 @@ public class SearchJira {
     public void test1ValidJQL(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.clickSearchButton();
@@ -55,7 +54,6 @@ public class SearchJira {
     public void test2SaveFilter() throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         searchPage.clickSaveAsButton();
@@ -74,7 +72,6 @@ public class SearchJira {
     public void testCheckingOfProjectFilter(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
@@ -84,7 +81,6 @@ public class SearchJira {
     public void test4InvalidJQL() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
         searchPage.clickSearchButton();
@@ -96,7 +92,6 @@ public class SearchJira {
     public void UncheckTheBoxes() throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         searchPage.clickFiterTypeIssue();
@@ -113,7 +108,6 @@ public class SearchJira {
     public void checkingOfNewFilterButton()  throws InterruptedException {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         sleep(10);
@@ -127,7 +121,6 @@ public class SearchJira {
     public void EpmtyResultsIssue() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
-        searchPage.atRequiredPage();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.clickSearchButton();
@@ -144,7 +137,6 @@ public class SearchJira {
         searchPage.clickFiterTypeIssue();
         searchPage.clickButtonChangeViews();
         searchPage.clickDetailView();
-
         List<SelenideElement> listImg= $(".list-content").$$("img");
         for (WebElement element: listImg) {
             Assert.assertEquals(element.getAttribute("alt"), "Epic");}

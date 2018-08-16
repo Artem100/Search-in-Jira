@@ -13,10 +13,6 @@ public class DashboardPage {
 
     public void clickSearchOfIssues(){ $("#issues_new_search_link_lnk").click(); }
 
-    public boolean atRequiredPage() {
-        Assert.assertEquals(title(), "System Dashboard - Hillel IT School JIRA");
-    return true; }
-
     public void clickCreateIssueButton() {
         $(By.id("create_link")).click();}
 }
