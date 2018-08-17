@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -17,6 +18,12 @@ public class ManageFiltersPages {
     public void clickButtonDeleteApprove(){
         $(By.cssSelector("#delete-filter-submit")).click();
     }
+
+    public void checkAvailabilityFilter(){
+        $(By.linkText("1 testSaveFilter")).shouldBe(Condition.visible); }
+
+    public void checkMissFilter(){
+        $(By.linkText("1 testSaveFilter")).shouldNotBe(Condition.visible); }
 }
 
 

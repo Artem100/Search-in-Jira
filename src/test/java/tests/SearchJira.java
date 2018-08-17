@@ -46,7 +46,7 @@ public class SearchJira {
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.clickSearchButton();
-        $(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed();
+        searchPage.titleTestNewIssue();
 
     }
 
@@ -61,11 +61,11 @@ public class SearchJira {
         searchPage.clickSubmitFilterName();
         searchPage.clickFindFiltersButton();
         manageFiltersPages.clickMyButton();
-        $(By.linkText("1 testSaveFilter")).shouldBe(Condition.visible);
+        manageFiltersPages.checkAvailabilityFilter();
         manageFiltersPages.clickButtonSettings();
         manageFiltersPages.clickButtonDelete();
         manageFiltersPages.clickButtonDeleteApprove();
-        $(By.linkText("1 testSaveFilter")).shouldNotBe(Condition.visible);
+        manageFiltersPages.checkMissFilter();
     }
 
     @Test
@@ -84,8 +84,8 @@ public class SearchJira {
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
         searchPage.clickSearchButton();
-        $(By.xpath("//div[@class = 'aui-message error']")).isDisplayed();
-        $(By.id("jqlerrormsg")).isDisplayed();
+        searchPage.errorIcon();
+        searchPage.errorMessageTable();
     }
 
     @Test
@@ -102,7 +102,8 @@ public class SearchJira {
         searchPage.selectEpicFilter();
         sleep(10);
         searchPage.uncheckSearchProjectFindProjects();
-        $(By.cssSelector("span.fieldLabel")).isDisplayed(); }
+        searchPage.defaultLabelsStatuses();
+    }
 
     @Test
     public void checkingOfNewFilterButton()  throws InterruptedException {
@@ -114,7 +115,7 @@ public class SearchJira {
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         searchPage.clickNewFilterButton();
-        $$(By.cssSelector("span.fieldLabel")).shouldHaveSize(4);
+        searchPage.defaultLabelsStatuses();
         }
 
     @Test
@@ -124,7 +125,7 @@ public class SearchJira {
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.clickSearchButton();
-        $(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();
+        searchPage.iconEpmtyResults();
     }
 
     @Test

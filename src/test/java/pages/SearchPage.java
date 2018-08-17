@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.title;
 import static java.lang.Thread.sleep;
 
@@ -82,5 +83,16 @@ public class SearchPage {
 
     public void clickListView(){
         $("a.aui-list-item-link[data-layout-key='list-view']").click(); }
+
+    public void titleTestNewIssue(){ $(By.cssSelector("[title='[Test Automation] Test New Issue']")).isDisplayed(); }
+
+    public void errorMessageTable(){ $(By.xpath("//div[@class = 'aui-message error']")).isDisplayed(); }
+
+    public void errorIcon(){$(By.id("jqlerrormsg")).isDisplayed();}
+
+    public void defaultLabelsStatuses(){$$(By.cssSelector("span.fieldLabel")).shouldHaveSize(4);}
+
+    public void iconEpmtyResults(){$(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();}
+
 
 }
