@@ -42,10 +42,9 @@ public class SearchPage {
         $(By.id("searcher-pid-input")).setValue(request);
         $(By.cssSelector("label[title='" +request+"']")).click(); }
 
-    public void uncheckSearchProjectFindProjects()  throws InterruptedException{
+    public void uncheckSearchProjectFindProjects(){
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
-        sleep(10);
-        $(By.cssSelector("label[title='QAAUTO-6']")).click(); }
+        $(By.cssSelector("label[title='QAAUTO-6']")).shouldBe(Condition.visible).click(); }
 
     public void clickSaveAsButton(){
         $(By.cssSelector(".aui-button.aui-button-light.save-as-new-filter")).click(); }
@@ -59,7 +58,7 @@ public class SearchPage {
     public void clickFiterTypeIssue(){ $(By.cssSelector("button[data-id='issuetype']")).click(); }
 
     public void selectEpicFilter(){
-        $(By.cssSelector("input[value='10000']")).click();
+        $(By.cssSelector("input[value='10000']")).shouldBe(Condition.visible).click();
     }
 
     public void clickSomePlace(){

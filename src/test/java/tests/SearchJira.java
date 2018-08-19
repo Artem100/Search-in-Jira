@@ -89,18 +89,16 @@ public class SearchJira {
     }
 
     @Test
-    public void UncheckTheBoxes() throws InterruptedException {
+    public void UncheckTheBoxes(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
-        sleep(10);
         searchPage.clickSomePlace();
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
-        sleep(10);
         searchPage.uncheckSearchProjectFindProjects();
         searchPage.defaultLabelsStatuses();
     }
