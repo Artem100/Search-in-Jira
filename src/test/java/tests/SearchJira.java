@@ -16,10 +16,8 @@ import utils.ConfigProperties;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
-import static java.lang.Thread.sleep;
 
 public class SearchJira {
-    public static WebDriver driver;
     public static LoginPage loginPage;
     public static SearchPage searchPage;
     public static DashboardPage dashboardPage;
@@ -40,14 +38,13 @@ public class SearchJira {
     }
 
     @Test
-    public void test1ValidJQL(){
+    public void testValidJQL(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickAdvancedButtonSelenide();
         searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.clickSearchButton();
         searchPage.titleTestNewIssue();
-
     }
 
     @Test
@@ -78,7 +75,7 @@ public class SearchJira {
     }
 
     @Test
-    public void test4InvalidJQL() {
+    public void testInvalidJQL() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickAdvancedButtonSelenide();
@@ -113,7 +110,7 @@ public class SearchJira {
         searchPage.selectEpicFilter();
         searchPage.clickNewFilterButton();
         searchPage.defaultLabelsStatuses();
-        }
+    }
 
     @Test
     public void epmtyResultsIssue() {
