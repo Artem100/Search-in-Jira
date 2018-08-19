@@ -89,7 +89,7 @@ public class SearchJira {
     }
 
     @Test
-    public void UncheckTheBoxes(){
+    public void uncheckTheBoxes(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
@@ -116,7 +116,7 @@ public class SearchJira {
         }
 
     @Test
-    public void EpmtyResultsIssue() {
+    public void epmtyResultsIssue() {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickAdvancedButtonSelenide();
@@ -126,7 +126,7 @@ public class SearchJira {
     }
 
     @Test
-    public void CheckingProjectFilterEpicType()  {
+    public void checkingProjectFilterEpicType()  {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.selectProject("QAAUTO-6");
