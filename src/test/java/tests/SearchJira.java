@@ -104,12 +104,11 @@ public class SearchJira {
     }
 
     @Test
-    public void checkingOfNewFilterButton()  throws InterruptedException {
+    public void checkingOfNewFilterButton(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
-        sleep(10);
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         searchPage.clickNewFilterButton();
