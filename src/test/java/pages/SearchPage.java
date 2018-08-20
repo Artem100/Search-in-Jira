@@ -17,8 +17,13 @@ import static java.lang.Thread.sleep;
 public class SearchPage {
 
     public void clickAdvancedButtonSelenide(){
+        if ($(By.cssSelector("span.aui-icon.icon-close")).isDisplayed()){
+            $(By.cssSelector("span.aui-icon.icon-close")).click();}
+        else{}
         if($(By.name("jql")).isDisplayed()){ }
-        else { $(By.cssSelector("[class='switcher-item active ']")).click(); } }
+        else { $(By.xpath("//a[contains(@class, 'switcher-item active ')]")).shouldBe(Condition.visible).shouldBe(Condition.enabled).click();
+        }
+    }
 
 
     public void advancedField(String request){ $(By.name("jql")).setValue(request); }
@@ -28,8 +33,13 @@ public class SearchPage {
 
 
     public void clickSearchProjectButton(){
+        if ($(By.cssSelector("span.aui-icon.icon-close")).isDisplayed()){
+            $(By.cssSelector("span.aui-icon.icon-close")).click();}
+        else{}
         if($(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).isDisplayed()){ }
-        else { $(By.cssSelector("[class='switcher-item active ']")).click(); } }
+        else {
+            $(By.xpath("//a[contains(@class, 'switcher-item active ')]")).shouldBe(Condition.visible).shouldBe(Condition.enabled).click(); }
+    }
 
 
     public void selectProjectQAAUTO6(String request){
