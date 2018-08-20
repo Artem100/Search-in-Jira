@@ -48,7 +48,12 @@ public class SearchJira {
     }
 
     @Test
-    public void test2SaveFilter() throws InterruptedException {
+    public void test2SaveFilter(){
+        dashboardPage.clickIssueButton();
+        dashboardPage.clickSearchOfIssues();
+        searchPage.clickFindFiltersButton();
+        manageFiltersPages.clickMyButton();
+        manageFiltersPages.deleteFilterIfExist("1 testSaveFilter");
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
@@ -58,11 +63,8 @@ public class SearchJira {
         searchPage.clickSubmitFilterName();
         searchPage.clickFindFiltersButton();
         manageFiltersPages.clickMyButton();
-        manageFiltersPages.checkAvailabilityFilter();
-        manageFiltersPages.clickButtonSettings();
-        manageFiltersPages.clickButtonDelete();
-        manageFiltersPages.clickButtonDeleteApprove();
-        manageFiltersPages.checkMissFilter();
+        manageFiltersPages.checkAvailabilityFilter("1 testSaveFilter");
+        manageFiltersPages.deleteFilterIfExist("1 testSaveFilter");
     }
 
     @Test

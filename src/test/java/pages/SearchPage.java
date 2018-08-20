@@ -35,7 +35,8 @@ public class SearchPage {
     public void selectProjectQAAUTO6(String request){
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         $(By.id("searcher-pid-input")).setValue(request);
-        $(By.cssSelector("label[title='QAAUTO-6']")).click(); }
+        $(By.cssSelector("label[title='QAAUTO-6']")).click();
+        $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();}
 
     public void selectProject(String request){
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
@@ -47,7 +48,7 @@ public class SearchPage {
         $(By.cssSelector("label[title='QAAUTO-6']")).shouldBe(Condition.visible).click(); }
 
     public void clickSaveAsButton(){
-        $(By.cssSelector(".aui-button.aui-button-light.save-as-new-filter")).click(); }
+        $(By.cssSelector(".aui-button.aui-button-light.save-as-new-filter")).shouldBe(Condition.visible).click(); }
 
     public void enterFilterName(String request){ $(By.id("filterName")).setValue(request); }
 
@@ -58,7 +59,7 @@ public class SearchPage {
     public void clickFiterTypeIssue(){ $(By.cssSelector("button[data-id='issuetype']")).click(); }
 
     public void selectEpicFilter(){
-        $(By.cssSelector("input[value='10000']")).shouldBe(Condition.visible).click();
+        $(By.cssSelector("input[value='10000']")).click();
     }
 
     public void clickSomePlace(){
