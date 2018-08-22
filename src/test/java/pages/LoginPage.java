@@ -9,6 +9,8 @@ import static com.codeborne.selenide.Selenide.title;
 
 public class LoginPage {
 
+    public String jSessionCookies = "";
+
     public void enterLogin(String login){
         $(By.id("login-form-username")).sendKeys(login);
     }

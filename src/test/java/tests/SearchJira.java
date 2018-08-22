@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -23,7 +24,7 @@ public class SearchJira {
     public static DashboardPage dashboardPage;
     public static ManageFiltersPages manageFiltersPages;
 
-    @BeforeMethod
+    @BeforeTest
     public void setup(){
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
@@ -35,7 +36,14 @@ public class SearchJira {
         loginPage.enterPassword(ConfigProperties.getTestProperty("PasswordWebinar5"));
         loginPage.clickSubmitButton();
         loginPage.atRequiredPage();
+        loginPage.jSessionCookies=WebDriverRunner.getWebDriver().manage().getCookieNamed("JSESSIONID").getValue();
     }
+
+   /* @BeforeMethod
+    public void useCookies(){
+        Cookie ck = new Cookie("JSESSIONID", loginPage.jSessionCookies);
+        WebDriverRunner.getWebDriver().manage().addCookie(ck);
+    }*/
 
     @Test
     public void testValidJQL(){
@@ -142,6 +150,10 @@ public class SearchJira {
     @AfterMethod
     public void close1(){
         WebDriverRunner.getWebDriver().quit();
+        Configuration.browser = ConfigProperties.getTestProperty("useBrowser");
+        open(ConfigProperties.getTestProperty("jiraURL"));
+        Cookie ck = new Cookie("JSESSIONID", loginPage.jSessionCookies);
+        WebDriverRunner.getWebDriver().manage().addCookie(ck);
     }
 
     @AfterSuite
