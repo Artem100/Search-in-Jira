@@ -1,8 +1,7 @@
 package tests;
 
 import com.codeborne.selenide.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -18,23 +17,34 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SearchJira {
-    public static LoginPage loginPage;
-    public static SearchPage searchPage;
-    public static DashboardPage dashboardPage;
-    public static ManageFiltersPages manageFiltersPages;
+    private static LoginPage loginPage;
+    private static SearchPage searchPage;
+    private static DashboardPage dashboardPage;
+    private static ManageFiltersPages manageFiltersPages;
 
-    @BeforeMethod
-    public void setup(){
+    @BeforeSuite
+    public void setupSuite(){
         loginPage = new LoginPage();
         dashboardPage = new DashboardPage();
         searchPage = new SearchPage();
         manageFiltersPages = new ManageFiltersPages();
         Configuration.browser = ConfigProperties.getTestProperty("useBrowser");
-        open(ConfigProperties.getTestProperty("jiraURL"));
+        loginPage.navigateTo();
         loginPage.enterLogin(ConfigProperties.getTestProperty("LoginWebinar5"));
         loginPage.enterPassword(ConfigProperties.getTestProperty("PasswordWebinar5"));
         loginPage.clickSubmitButton();
         loginPage.atRequiredPage();
+        loginPage.jSessionCookies=WebDriverRunner.getWebDriver().manage().getCookieNamed("JSESSIONID").getValue();
+//        WebDriverRunner.getWebDriver().quit();
+        close();
+    }
+
+    @BeforeMethod
+    public void setupTest(){
+        Configuration.browser = ConfigProperties.getTestProperty("useBrowser");
+        open(ConfigProperties.getTestProperty("jiraURL"));
+        WebDriverRunner.getWebDriver().manage().addCookie(new Cookie("JSESSIONID", loginPage.jSessionCookies));
+        dashboardPage.navigateTo();
     }
 
     @Test
@@ -141,7 +151,7 @@ public class SearchJira {
 
     @AfterMethod
     public void close1(){
-        WebDriverRunner.getWebDriver().quit();
+        close();
     }
 
     @AfterSuite
