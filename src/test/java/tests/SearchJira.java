@@ -39,19 +39,13 @@ public class SearchJira {
         close();
     }
 
-    @BeforeTest
+    @BeforeMethod
     public void setupTest(){
         Configuration.browser = ConfigProperties.getTestProperty("useBrowser");
         open(ConfigProperties.getTestProperty("jiraURL"));
         WebDriverRunner.getWebDriver().manage().addCookie(new Cookie("JSESSIONID", loginPage.jSessionCookies));
         dashboardPage.navigateTo();
     }
-
-   /* @BeforeMethod
-    public void useCookies(){
-        Cookie ck = new Cookie("JSESSIONID", loginPage.jSessionCookies);
-        WebDriverRunner.getWebDriver().manage().addCookie(ck);
-    }*/
 
     @Test
     public void testValidJQL(){
