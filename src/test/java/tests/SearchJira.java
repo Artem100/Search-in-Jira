@@ -155,7 +155,7 @@ public class SearchJira {
     }
 
     @Test
-    public void testJiraCoreHelpPageOpenNewWindow(){
+    public void testJiraCoreHelpPageOpenNewTab(){
         dashboardPage.dashboardPage();
         String handleDashboard= getWebDriver().getWindowHandle();
         dashboardPage.clickHelpMenu();
