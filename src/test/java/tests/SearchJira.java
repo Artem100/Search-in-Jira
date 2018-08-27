@@ -143,9 +143,9 @@ public class SearchJira {
         searchPage.clickSearchProjectButton();
         searchPage.selectProject("QAAUTO-6");
         searchPage.searchResultsContains("QAAUT6");
-        searchPage.fiterTypeIssue();
+        searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
-        searchPage.fiterTypeIssue();
+        searchPage.clickFiterTypeIssue();
         searchPage.clickButtonChangeViews();
         searchPage.clickDetailView();
         searchPage.searchResultsTypeContains("Epic");

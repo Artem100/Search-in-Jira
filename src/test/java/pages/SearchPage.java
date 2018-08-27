@@ -119,8 +119,4 @@ public class SearchPage {
 
     public void iconEpmtyResults(){$(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();}
 
-    public void fiterTypeIssue(){
-        $(By.cssSelector("button[data-id='issuetype']")).click();
-    }
-
 }
