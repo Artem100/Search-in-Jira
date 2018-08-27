@@ -6,4 +6,14 @@
             <class name="tests.SearchJira"/>
         </classes>
     </test>
+    <test name="Test1">
+        <classes>
+            <class name="tests.SearchJira"/>
+        </classes>
+    </test>
+    <test name="Test2">
+        <classes>
+            <class name="tests.SearchJira"/>
+        </classes>
+    </test>
 </suite>

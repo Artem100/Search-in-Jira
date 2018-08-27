@@ -13,8 +13,10 @@ import pages.SearchPage;
 import utils.ConfigProperties;
 
 import java.util.List;
+import java.util.Set;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class SearchJira {
     private static LoginPage loginPage;
@@ -58,7 +60,7 @@ public class SearchJira {
     }
 
     @Test
-    public void test2SaveFilter(){
+    public void testSaveFilter(){
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickFindFiltersButton();
@@ -68,14 +70,14 @@ public class SearchJira {
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
         searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.searchResultsContains("QAAUT6");
         searchPage.clickSaveAsButton();
         searchPage.enterFilterName("1 testSaveFilter");
         searchPage.clickSubmitFilterName();
         searchPage.clickFindFiltersButton();
         manageFiltersPages.clickMyButton();
         manageFiltersPages.checkAvailabilityFilter("1 testSaveFilter");
-        manageFiltersPages.deleteFilterIfExist("1 testSaveFilter");
-    }
+        manageFiltersPages.deleteFilterIfExist("1 testSaveFilter");}
 
     @Test
     public void testCheckingOfProjectFilter(){
@@ -135,18 +137,35 @@ public class SearchJira {
     }
 
     @Test
-    public void checkingProjectFilterEpicType()  {
+    public void CheckingProjectFilterEpicType()  {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
+        searchPage.clickSearchProjectButton();
         searchPage.selectProject("QAAUTO-6");
-        searchPage.clickFiterTypeIssue();
+        searchPage.searchResultsContains("QAAUT6");
+        searchPage.fiterTypeIssue();
         searchPage.selectEpicFilter();
-        searchPage.clickFiterTypeIssue();
+        searchPage.fiterTypeIssue();
         searchPage.clickButtonChangeViews();
         searchPage.clickDetailView();
-        List<SelenideElement> listImg= $(".list-content").$$("img");
+        searchPage.searchResultsTypeContains("Epic");
+        List<SelenideElement> listImg= searchPage.issueListContainType();
         for (WebElement element: listImg) {
-            Assert.assertEquals(element.getAttribute("alt"), "Epic");}
+            Assert.assertEquals(element.getAttribute("alt"), "Epic"); }
+    }
+
+    @Test
+    public void testJiraCoreHelpPageOpenNewWindow(){
+        dashboardPage.dashboardPage();
+        String handleDashboard= getWebDriver().getWindowHandle();
+        dashboardPage.clickHelpMenu();
+        dashboardPage.clickJiraCoreHelp();
+        Set<String> handles = getWebDriver().getWindowHandles();
+        Assert.assertEquals(handles.size(),2);
+        handles.remove(handleDashboard);
+        String handleJavaCoreHelp=handles.iterator().next();
+        getWebDriver().switchTo().window(handleJavaCoreHelp);
+        dashboardPage.jiraCoreHelpPage();
     }
 
     @AfterMethod
