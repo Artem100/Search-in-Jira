@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.util.List;
+
+import static com.codeborne.selenide.Condition.attribute;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.title;
@@ -41,7 +46,6 @@ public class SearchPage {
             $(By.xpath("//a[contains(@class, 'switcher-item active ')]")).shouldBe(Condition.visible).shouldBe(Condition.enabled).click(); }
     }
 
-
     public void selectProjectQAAUTO6(String request){
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         $(By.id("searcher-pid-input")).setValue(request);
@@ -60,16 +64,27 @@ public class SearchPage {
     public void clickSaveAsButton(){
         $(By.cssSelector(".aui-button.aui-button-light.save-as-new-filter")).shouldBe(Condition.visible).click(); }
 
-    public void enterFilterName(String request){ $(By.id("filterName")).setValue(request); }
+    public void enterFilterName(String request){ $(By.id("filterName")).shouldBe(Condition.visible).shouldBe(Condition.enabled).setValue(request); }
 
     public void clickSubmitFilterName(){ $(By.cssSelector(".aui-button.submit")).click(); }
+
+    public void searchResultsContains(String request){
+        $(".focused").shouldBe(Condition.visible).shouldHave(attribute("data-key")).shouldHave(text(request));
+    }
+
+    public void searchResultsTypeContains(String request){
+        $(".list-content").shouldBe(Condition.visible).$("img").shouldHave(attribute("alt", request));
+    }
+
+    public List<SelenideElement> issueListContainType(){
+        return $(".list-content").shouldBe(Condition.visible).$$("img");}
 
     public void clickFindFiltersButton(){ $(By.cssSelector(".find-filters")).click(); }
 
     public void clickFiterTypeIssue(){ $(By.cssSelector("button[data-id='issuetype']")).click(); }
 
     public void selectEpicFilter(){
-        $(By.cssSelector("input[value='10000']")).click();
+        $(By.cssSelector("input[value='10000']")).shouldBe(Condition.visible).click();
     }
 
     public void clickSomePlace(){
@@ -103,6 +118,5 @@ public class SearchPage {
     public void defaultLabelsStatuses(){$$(By.cssSelector("span.fieldLabel")).shouldHaveSize(4);}
 
     public void iconEpmtyResults(){$(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();}
-
 
 }
