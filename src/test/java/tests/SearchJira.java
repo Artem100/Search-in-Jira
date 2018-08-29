@@ -168,8 +168,21 @@ public class SearchJira {
         dashboardPage.jiraCoreHelpPage();
     }
 
+    @Test
+    public void alertMessageOfBrowserFilterPage(){
+        dashboardPage.clickIssueButton();
+        dashboardPage.clickSearchOfIssues();
+        searchPage.clickFindFiltersButton();
+        searchPage.clickSearchFilterField("Blabla");
+        dashboardPage.clickIssueButton();
+        dashboardPage.clickSearchOfIssues();
+        switchTo().alert().accept();
+        searchPage.atRequiredPage();
+        searchPage.clickFindFiltersButton();
+    }
+
     @AfterMethod
-    public void close1(){
+    public void closeBrowser(){
         close();
     }
 

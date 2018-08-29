@@ -96,9 +96,8 @@ public class SearchPage {
     public void  clickNewFilterButton(){
         $(By.cssSelector("a.new-search.aui-button.aui-button-light")).click(); }
 
-    public boolean atRequiredPage()
-    { Assert.assertEquals(title(), "Issue Navigator - Hillel IT School JIRA");
-        return true; }
+    public void atRequiredPage()
+    { Assert.assertTrue($(By.cssSelector("h1.search-title")).isDisplayed()); }
 
     public void clickButtonChangeViews(){
         $(".aui-buttons").click();}
@@ -118,5 +117,9 @@ public class SearchPage {
     public void defaultLabelsStatuses(){$$(By.cssSelector("span.fieldLabel")).shouldHaveSize(4);}
 
     public void iconEpmtyResults(){$(By.xpath("//div[@class='jira-adbox jira-adbox-medium no-results no-results-message']")).isDisplayed();}
+
+    public void clickSearchFilterField(String filterName){
+        $(By.cssSelector("input.text")).setValue(filterName);
+    }
 
 }
