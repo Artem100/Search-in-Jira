@@ -99,5 +99,18 @@ fabric.properties
 
 /build
 
+# IntelliJ project files 
+*.iml
+*.iws
+*.ipr
+.idea/
+
+# Maven 
+target/
+build/
+
+#Allure
+.allure/
+
 
 # End of https://www.gitignore.io/api/intellij
