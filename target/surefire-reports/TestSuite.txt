@@ -1,4 +1,39 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 85.811 sec - in TestSuite
+Tests run: 10, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 183.43 s <<< FAILURE! - in TestSuite
+CheckingProjectFilterEpicType(tests.SearchJira)  Time elapsed: 10.707 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have attribute data-key {.focused}
+Element: '<tr class="issuerow focused issue-table-draggable" data-issuekey="QAAUT7-714" id="issuerow47222" rel="47222">QAAUT7-714
+No description
+Unassigned Alex_Tropp BACKLOG Unresolved 12/Feb/19 12/Feb/19  </tr>'
+	at tests.SearchJira.CheckingProjectFilterEpicType(SearchJira.java:145)
+
+testCheckingOfProjectFilter(tests.SearchJira)  Time elapsed: 10.302 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {.item-label}
+Expected: exist
+	at tests.SearchJira.testCheckingOfProjectFilter(SearchJira.java:88)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"css selector","selector":".item-label"}
+  (Session info: chrome=72.0.3626.96)
+  (Driver info: chromedriver=73.0.3683.20 (8e2b610813e167eee3619ac4ce6e42e3ec622017),platform=Linux 4.15.0-45-generic x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.14.0', revision: 'aacccce0', time: '2018-08-02T20:19:58.91Z'
+System info: host: 'stolbtsov-Vostro-15-3568', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '4.15.0-45-generic', java.version: '1.8.0_191'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 73.0.3683.20 (8e2b610813e16..., userDataDir: /tmp/.com.google.Chrome.PVfdTf}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:33215}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.96, webStorageEnabled: true}
+Session ID: 2eebd3cf0095816641c92f48cbd926b1
+*** Element info: {Using=css selector, value=.item-label}
+	at tests.SearchJira.testCheckingOfProjectFilter(SearchJira.java:88)
+
+testSaveFilter(tests.SearchJira)  Time elapsed: 16.281 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementShould: 
+Element should have attribute data-key {.focused}
+Element: '<tr class="issuerow focused issue-table-draggable" data-issuekey="QAAUT7-714" id="issuerow47222" rel="47222">QAAUT7-714
+No description
+Unassigned Alex_Tropp BACKLOG Unresolved 12/Feb/19 12/Feb/19  </tr>'
+	at tests.SearchJira.testSaveFilter(SearchJira.java:73)
+

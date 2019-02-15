@@ -1,5 +1,6 @@
-tests/SearchJira.class
 pages/DashboardPage.class
+tests/SearchJira.class
 pages/ManageFiltersPages.class
 pages/LoginPage.class
+utils/ConfigProperties.class
 pages/SearchPage.class

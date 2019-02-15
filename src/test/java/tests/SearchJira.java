@@ -32,8 +32,8 @@ public class SearchJira {
         manageFiltersPages = new ManageFiltersPages();
         Configuration.browser = ConfigProperties.getTestProperty("useBrowser");
         loginPage.navigateTo();
-        loginPage.enterLogin(ConfigProperties.getTestProperty("LoginWebinar5"));
-        loginPage.enterPassword(ConfigProperties.getTestProperty("PasswordWebinar5"));
+        loginPage.enterLogin(ConfigProperties.getTestProperty("Login"));
+        loginPage.enterPassword(ConfigProperties.getTestProperty("Password"));
         loginPage.clickSubmitButton();
         loginPage.atRequiredPage();
         loginPage.jSessionCookies=WebDriverRunner.getWebDriver().manage().getCookieNamed("JSESSIONID").getValue();
@@ -54,7 +54,7 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickAdvancedButtonSelenide();
-        searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DESC");
+        searchPage.advancedField("project = QAAUT7 AND text ~ \"Test new issue\" order by lastViewed DESC");
         searchPage.clickSearchButton();
         searchPage.titleTestNewIssue();
     }
@@ -69,8 +69,8 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
-        searchPage.selectProjectQAAUTO6("QAAUTO-6");
-        searchPage.searchResultsContains("QAAUT6");
+        searchPage.selectProjectQAAUTO6("QAAUTO-7");
+        searchPage.searchResultsContains("QAAUT7");
         searchPage.clickSaveAsButton();
         searchPage.enterFilterName("1 testSaveFilter");
         searchPage.clickSubmitFilterName();
@@ -84,7 +84,7 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
-        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.selectProjectQAAUTO6("QAAUTO-7");
         Assert.assertEquals(searchPage.firstResultInFilterSearch().getAttribute("title"), "QAAUTO-6");
     }
 
@@ -93,7 +93,7 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickAdvancedButtonSelenide();
-        searchPage.advancedField("project = QAAUT6 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
+        searchPage.advancedField("project = QAAUT7 AND text ~ \"Test new issue\" order by lastViewed DEssSC");
         searchPage.clickSearchButton();
         searchPage.errorIcon();
         searchPage.errorMessageTable();
@@ -104,7 +104,7 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
-        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.selectProjectQAAUTO6("QAAUTO-7");
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         searchPage.clickSomePlace();
@@ -119,7 +119,7 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
-        searchPage.selectProjectQAAUTO6("QAAUTO-6");
+        searchPage.selectProjectQAAUTO6("QAAUTO-7");
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         searchPage.clickNewFilterButton();
@@ -131,7 +131,7 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickAdvancedButtonSelenide();
-        searchPage.advancedField("project = QAAUT6 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
+        searchPage.advancedField("project = QAAUT7 AND issuetype = Task AND status = \"In Progress\" AND creator in (currentUser())");
         searchPage.clickSearchButton();
         searchPage.iconEpmtyResults();
     }
@@ -141,8 +141,8 @@ public class SearchJira {
         dashboardPage.clickIssueButton();
         dashboardPage.clickSearchOfIssues();
         searchPage.clickSearchProjectButton();
-        searchPage.selectProject("QAAUTO-6");
-        searchPage.searchResultsContains("QAAUT6");
+        searchPage.selectProject("QAAUTO-7");
+        searchPage.searchResultsContains("QAAUT7");
         searchPage.clickFiterTypeIssue();
         searchPage.selectEpicFilter();
         searchPage.clickFiterTypeIssue();

@@ -49,7 +49,7 @@ public class SearchPage {
     public void selectProjectQAAUTO6(String request){
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
         $(By.id("searcher-pid-input")).setValue(request);
-        $(By.cssSelector("label[title='QAAUTO-6']")).click();
+        $(By.cssSelector("label[title='QAAUTO-7']")).click();
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();}
 
     public void selectProject(String request){
@@ -59,7 +59,7 @@ public class SearchPage {
 
     public void uncheckSearchProjectFindProjects(){
         $(By.cssSelector(".criteria-selector.aui-button.aui-button-subtle.drop-arrow")).click();
-        $(By.cssSelector("label[title='QAAUTO-6']")).shouldBe(Condition.visible).click(); }
+        $(By.cssSelector("label[title='QAAUTO-7']")).shouldBe(Condition.visible).click(); }
 
     public void clickSaveAsButton(){
         $(By.cssSelector(".aui-button.aui-button-light.save-as-new-filter")).shouldBe(Condition.visible).click(); }
